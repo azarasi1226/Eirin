@@ -5,8 +5,8 @@ namespace Eirin.Domain.Shared
     /// <summary>
     /// 列挙型の基底クラス
     /// </summary>
-    public abstract record Enumeration<T>
-        where T : Enumeration<T>
+    public abstract record EnumerationBase<T>
+        where T : EnumerationBase<T>
     {
         /// <summary>
         /// Id
@@ -21,7 +21,7 @@ namespace Eirin.Domain.Shared
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        protected Enumeration(int id, string name)
+        protected EnumerationBase(int id, string name)
         {
             Id = id;
             Name = name;

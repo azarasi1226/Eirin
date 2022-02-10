@@ -1,5 +1,7 @@
 ﻿
 
+using NUlid;
+
 namespace Reimu.Domain.Shared
 {
     /// <summary>
@@ -17,6 +19,7 @@ namespace Reimu.Domain.Shared
         /// </summary>
         protected IdBase()
         {
+            Id = Ulid.NewUlid().ToString();
         }
 
         /// <summary>

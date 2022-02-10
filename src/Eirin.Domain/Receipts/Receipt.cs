@@ -33,14 +33,19 @@
         /// <summary>
         /// 金額
         /// </summary>
-        public long Price { get; set; }
+        public Price Price { get; set; }
 
         /// <summary>
-        /// 請求元
+        /// 発行者
         /// </summary>
-        public string BillingSource { get; set; }
+        public Issuer Issuer { get; set; }
 
-        private Receipt(ReceiptId id, DateTime registrationDate, FileHash filehash, string filePath, DateTime billingDate, long price, string billingSource)
+        /// <summary>
+        /// メモ
+        /// </summary>
+        public string Memo { get; set; }
+
+        private Receipt(ReceiptId id, DateTime registrationDate, FileHash filehash, string filePath, DateTime billingDate, Price price, Issuer issuer, string memo)
         {
             Id = id;
             RegistrationDate = registrationDate;
@@ -48,27 +53,28 @@
             FilePath = filePath;
             BillingDate = billingDate;
             Price = price;
-            BillingSource = billingSource;
+            Issuer = issuer;
+            Memo = memo;
         }
 
         /// <summary>
         /// 生成
         /// </summary>
-        public static Receipt Create(FileStream fileStream, DateTime billingDate, long price, string billingSource)
+        public static Receipt Create(FileStream fileStream, DateTime billingDate, Price price, Issuer issuer, string memo)
         {
             var id = new ReceiptId();
             var registrationDate = DateTime.Now;
             var fileHash = FileHash.Create(fileStream);
 
-            return new Receipt(id, registrationDate, fileHash, null, billingDate, price, billingSource);
+            return new Receipt(id, registrationDate, fileHash, null, billingDate, price, issuer, memo);
         }
 
         /// <summary>
         /// 再構成
         /// </summary>
-        public static Receipt Reconstract(ReceiptId id, DateTime registrationDate, FileHash filehash, string filePath, DateTime billingDate, long price, string billingSource)
+        public static Receipt Reconstract(ReceiptId id, DateTime registrationDate, FileHash filehash, string filePath, DateTime billingDate, Price price, Issuer issuer, string memo)
         {
-            return new Receipt(id, registrationDate, filehash, filePath, billingDate, price, billingSource);
+            return new Receipt(id, registrationDate, filehash, filePath, billingDate, price, issuer, memo);
         }
     }
 }

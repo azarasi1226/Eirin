@@ -43,7 +43,7 @@
         /// <summary>
         /// メモ
         /// </summary>
-        public string Memo { get; set; }
+        public string? Memo { get; set; }
 
         private Receipt(ReceiptId id, DateTime registrationDate, FileHash filehash, string filePath, DateTime billingDate, Price price, Issuer issuer, string memo)
         {

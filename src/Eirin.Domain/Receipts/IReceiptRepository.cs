@@ -10,7 +10,12 @@
         /// <summary>
         /// 保存
         /// </summary>
-        public Task SaveAsync(Receipt receipt);
+        public Task UpdateAsync(Receipt receipt);
+
+        /// <summary>
+        /// 更新
+        /// </summary>
+        public Task InsertAsync(Receipt receipt);
 
         /// <summary>
         /// 削除

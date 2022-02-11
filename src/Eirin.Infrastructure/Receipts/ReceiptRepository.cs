@@ -1,29 +1,79 @@
-﻿using Eirin.Domain.Receipts;
+﻿using Dapper;
+using Eirin.Domain.Receipts;
 using Eirin.Infrastructure.Shared;
 
 namespace Eirin.Infrastructure.Receipts
 {
-    public class ReceiptRepository : IReceiptRepository
+    public class ReceiptRepository : RepositoryBase, IReceiptRepository
     {
-        private readonly ConnectionString _connectionString;
+
         public ReceiptRepository(ConnectionString connectionString)
+            : base(connectionString)
         {
-            _connectionString = connectionString;
+            if(!ExistsTable(ReceiptQueries.TableName))
+            {
+                CreateTable();
+            }
         }
 
-        public Task DeleateAsync(ReceiptId id)
+        /// <summary>
+        /// テーブル作成
+        /// </summary>
+        /// <returns></returns>
+        private void CreateTable()
         {
-            throw new NotImplementedException();
+            using (var con = Connection)
+            {
+                con.Execute(ReceiptQueries.CreateTableSQL);
+            }
         }
 
-        public Task<Receipt?> FindByIdAsync(ReceiptId id)
+        public async Task DeleateAsync(ReceiptId id)
         {
-            throw new NotImplementedException();
+            using (var con = Connection)
+            {
+                await con.ExecuteAsync(ReceiptQueries.DeleteSQL, new
+                {
+                    Id = id.Id 
+                });
+            }
         }
 
-        public Task SaveAsync(Receipt receipt)
+        public async Task<Receipt?> FindByIdAsync(ReceiptId id)
         {
-            throw new NotImplementedException();
+            return null;
+        }
+
+        public async Task InsertAsync(Receipt receipt)
+        {
+            using (var con = Connection)
+            {
+                await con.ExecuteAsync(ReceiptQueries.InsertSQL, new
+                {
+                    Id = receipt.Id.Id,
+                    RegistrationDate = receipt.RegistrationDate,
+                    Filehash = receipt.FileHash.HashValue,
+                    FilePath = receipt.FilePath,
+                    BillingDate = receipt.BillingDate,
+                    Price = receipt.Price.Value,
+                    Issuer = receipt.Issuer.Value,
+                    Memo = receipt.Memo,
+                });
+            }
+        }
+
+        public async Task UpdateAsync(Receipt receipt)
+        {
+            using (var con = Connection)
+            {
+                await con.ExecuteAsync(ReceiptQueries.UpdateSQL, new
+                {
+                    BillingDate = receipt.BillingDate,
+                    Price = receipt.Price.Value,
+                    Issuer = receipt.Issuer.Value,
+                    Memo = receipt.Memo,
+                });
+            }
         }
     }
 }

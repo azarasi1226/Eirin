@@ -13,7 +13,7 @@ namespace Eirin.Domain.Receipts
         {
             if (string.IsNullOrWhiteSpace(value))
             {
-                throw new DomainException();
+                throw new DomainException("発行者は必ず入力してください");
             }
         }
     }

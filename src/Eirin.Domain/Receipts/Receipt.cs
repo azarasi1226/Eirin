@@ -60,13 +60,13 @@
         /// <summary>
         /// 生成
         /// </summary>
-        public static Receipt Create(FileStream fileStream, DateTime billingDate, Price price, Issuer issuer, string memo)
+        internal static Receipt Create(FileStream fileStream, DateTime billingDate, Price price, Issuer issuer, string memo)
         {
             var id = new ReceiptId();
             var registrationDate = DateTime.Now;
             var fileHash = FileHash.Create(fileStream);
 
-            return new Receipt(id, registrationDate, fileHash, null, billingDate, price, issuer, memo);
+            return new Receipt(id, registrationDate, fileHash, fileStream.Name, billingDate, price, issuer, memo);
         }
 
         /// <summary>

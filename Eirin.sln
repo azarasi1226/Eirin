@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eirin.UseCase", "src\Eirin.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eirin.Test", "src\Eirin.Test\Eirin.Test.csproj", "{9EE4D28E-AFBA-4D15-852D-B442B0019770}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eirin.Infrastructure", "src\Eirin.Infrastructure\Eirin.Infrastructure.csproj", "{E8C9FA80-E845-4801-823E-6487620A209E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eirin.FirebaseInfrastructure", "src\Eirin.FirebaseInfrastructure\Eirin.FirebaseInfrastructure.csproj", "{FED51CB6-035F-4B9E-B741-50ADF5BD29D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{0C36F6FE-36D2-4E72-93EB-70FE0438B26B}"
@@ -37,10 +35,6 @@ Global
 		{9EE4D28E-AFBA-4D15-852D-B442B0019770}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EE4D28E-AFBA-4D15-852D-B442B0019770}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EE4D28E-AFBA-4D15-852D-B442B0019770}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E8C9FA80-E845-4801-823E-6487620A209E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8C9FA80-E845-4801-823E-6487620A209E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8C9FA80-E845-4801-823E-6487620A209E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E8C9FA80-E845-4801-823E-6487620A209E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FED51CB6-035F-4B9E-B741-50ADF5BD29D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FED51CB6-035F-4B9E-B741-50ADF5BD29D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FED51CB6-035F-4B9E-B741-50ADF5BD29D8}.Release|Any CPU.ActiveCfg = Release|Any CPU

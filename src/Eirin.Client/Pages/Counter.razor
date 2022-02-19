@@ -1,4 +1,10 @@
-﻿@page "/counter"
+﻿@using Eirin.gRPCServer
+@using Grpc.Net.Client
+
+@page "/counter"
+
+@inject GrpcChannel Channel
+
 
 <PageTitle>Counter</PageTitle>
 
@@ -11,8 +17,11 @@
 @code {
     private int currentCount = 0;
 
-    private void IncrementCount()
+    private async Task IncrementCount()
     {
-        currentCount++;
+        var client = new Greeter.GreeterClient(Channel);
+        var reply = await client.SayHelloAsync(new HelloRequest { Name = "okazuki" });
+
+        Console.WriteLine(reply.Message);
     }
 }

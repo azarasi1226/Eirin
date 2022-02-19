@@ -12,12 +12,7 @@
         {
             var extension = Path.GetExtension(fromFilePath);
 
-
-            //ファイルパス
-            using (FileStream fs = new FileStream(filePath, FileMode.Open , FileAccess.Read))
-            {
-                return Receipt.Create(fs, billingDate, price, issuer, memo);
-            }
+            throw new NotImplementedException();
         }
     }
 }

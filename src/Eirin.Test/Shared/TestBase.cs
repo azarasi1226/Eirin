@@ -1,9 +1,5 @@
-using Eirin.Domain.Receipts;
-using Eirin.Infrastructure.Receipts;
-using Eirin.Infrastructure.Shared;
 using Eirin.UseCase.Receipts;
 using Microsoft.Extensions.DependencyInjection;
-using Xunit;
 
 namespace Eirin.Test.Shared
 {
@@ -23,8 +19,7 @@ namespace Eirin.Test.Shared
         }
         static TestBase()
         {
-            s_serviceCollection.AddScoped(e => new ConnectionString() {Value = @"C:\Test.sqlite" });
-            s_serviceCollection.AddScoped<IReceiptRepository, ReceiptRepository>();
+          //  s_serviceCollection.AddScoped<IReceiptRepository, ReceiptRepository>();
             s_serviceCollection.AddScoped<CreateReceiptUseCase>();
         }
     }

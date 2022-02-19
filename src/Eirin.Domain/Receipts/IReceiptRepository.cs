@@ -1,5 +1,8 @@
 ﻿namespace Eirin.Domain.Receipts
 {
+    /// <summary>
+    /// 領収書レポジトリIF
+    /// </summary>
     public interface IReceiptRepository
     {
         /// <summary>

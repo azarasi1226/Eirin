@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eirin.Infrastructure", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eirin.FirebaseInfrastructure", "src\Eirin.FirebaseInfrastructure\Eirin.FirebaseInfrastructure.csproj", "{FED51CB6-035F-4B9E-B741-50ADF5BD29D8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{0C36F6FE-36D2-4E72-93EB-70FE0438B26B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eirin.Client", "src\Eirin.Client\Eirin.Client.csproj", "{93701C13-8CAA-440C-9236-B2CD7A06A1EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +43,16 @@ Global
 		{FED51CB6-035F-4B9E-B741-50ADF5BD29D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FED51CB6-035F-4B9E-B741-50ADF5BD29D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FED51CB6-035F-4B9E-B741-50ADF5BD29D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93701C13-8CAA-440C-9236-B2CD7A06A1EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93701C13-8CAA-440C-9236-B2CD7A06A1EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93701C13-8CAA-440C-9236-B2CD7A06A1EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93701C13-8CAA-440C-9236-B2CD7A06A1EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{93701C13-8CAA-440C-9236-B2CD7A06A1EF} = {0C36F6FE-36D2-4E72-93EB-70FE0438B26B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A65E2AB2-3A7A-465C-A8E5-AD3936798902}

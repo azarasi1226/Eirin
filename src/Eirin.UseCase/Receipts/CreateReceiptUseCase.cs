@@ -6,7 +6,7 @@ namespace Eirin.UseCase.Receipts
     {
         private IReceiptRepository _repository;
 
-        CreateReceiptUseCase(IReceiptRepository repository)
+        public CreateReceiptUseCase(IReceiptRepository repository)
         {
             _repository = repository;
         }

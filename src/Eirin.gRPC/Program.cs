@@ -5,6 +5,7 @@ const string s_AllowAll = "AllowAll";
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddGrpc();
+// CORSポリシー名に定義を紐付ける
 builder.Services.AddCors(o => o.AddPolicy(s_AllowAll, configure =>
 {
     configure.AllowAnyOrigin()
